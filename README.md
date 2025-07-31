@@ -85,3 +85,16 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 git remote add origin https://github.com/Mr-Hub00/iamhub-project.git
 git branch -M main
 git push -u origin main
+
+How to check and change directory
+
+To see your current folder, type:
+pwd
+
+To list files/folders in your current folder:
+dir
+
+To move into the backend folder:
+cd backend
+
+python manage.py runserver
