@@ -8,3 +8,6 @@ def nft_upload(request):
 
 def user_profile(request):
     return HttpResponse("User Profile Page (placeholder)")
+
+def dashboard(request):
+    return HttpResponse("Dashboard Page (placeholder)")
