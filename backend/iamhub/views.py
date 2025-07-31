@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from apps.nft_upload.models import NFTAsset
 from django import forms
-from backend.pin_to_ipfs import pin_file_to_ipfs, pin_json_to_ipfs
+from pin_to_ipfs import pin_file_to_ipfs, pin_json_to_ipfs
 
 class NFTAssetForm(forms.ModelForm):
     class Meta:

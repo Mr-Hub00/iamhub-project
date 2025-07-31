@@ -1,5 +1,4 @@
 import requests
-from backend.pin_to_ipfs import pin_file_to_ipfs, pin_json_to_ipfs
 
 STORACHA_API_KEY = 'YOUR_STORACHA_API_KEY'
 STORACHA_API_SECRET = 'YOUR_STORACHA_API_SECRET'
