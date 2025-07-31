@@ -5,3 +5,6 @@ def home(request):
 
 def nft_upload(request):
     return HttpResponse("NFT Upload Page (placeholder)")
+
+def user_profile(request):
+    return HttpResponse("User Profile Page (placeholder)")
