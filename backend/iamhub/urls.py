@@ -1,9 +1,8 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('nft/', views.nft_upload, name='nft_upload'),
-    path('users/', views.user_profile, name='user_profile'),
-    path('dashboard/', views.dashboard, name='dashboard'),
+    path('upload/', views.upload_nft, name='nft_upload'),
+    path('success/', views.upload_success, name='nft_upload_success'),
+    path('nft/', include('apps.nft_upload.urls')),
 ]
