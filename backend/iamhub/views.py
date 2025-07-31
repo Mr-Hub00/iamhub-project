@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import NFTAsset
+from apps.nft_upload.models import NFTAsset
 from django import forms
 
 class NFTAssetForm(forms.ModelForm):
