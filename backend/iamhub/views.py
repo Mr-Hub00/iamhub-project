@@ -11,7 +11,7 @@ class NFTAssetForm(forms.ModelForm):
 def home(request):
     return HttpResponse("Welcome to IAMHub!")
 
-def nft_upload(request):
+def upload_nft(request):
     if request.method == 'POST':
         form = NFTAssetForm(request.POST, request.FILES)
         if form.is_valid():
