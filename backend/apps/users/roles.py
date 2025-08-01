@@ -7,4 +7,7 @@ class Creator(AbstractUserRole):
     }
 
 class Editor(AbstractUserRole):
-    available_permissions =
+    available_permissions = {
+        'can_edit': True,
+        'can_view_dashboard': True
+    }
