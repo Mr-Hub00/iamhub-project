@@ -1,19 +1,27 @@
+import os
 import requests
+from dotenv import load_dotenv
 
-STORACHA_API_KEY = 'YOUR_STORACHA_API_KEY'
-STORACHA_API_SECRET = 'YOUR_STORACHA_API_SECRET'
+load_dotenv()
+
+STORACHA_API_KEY = os.getenv("STORACHA_API_KEY")
+STORACHA_SECRET_KEY = os.getenv("STORACHA_SECRET_KEY")
+STORACHA_UPLOAD_URL = os.getenv("STORACHA_UPLOAD_URL", "https://api.storacha.com/api/v0/upload")
 
 def pin_file_to_ipfs(filepath):
-    url = "https://api.storacha.com/v1/pins/file"
     headers = {
-        "Authorization": f"Bearer {STORACHA_API_KEY}",
-        # Add any other required headers here
+        "Authorization": f"Bearer {STORACHA_API_KEY}:{STORACHA_SECRET_KEY}"
     }
-    with open(filepath, "rb") as fp:
-        files = {"file": fp}
-        response = requests.post(url, files=files, headers=headers)
-    response.raise_for_status()
-    return response.json()["cid"]
+
+    with open(filepath, "rb") as file_data:
+        files = {"file": file_data}
+        response = requests.post(STORACHA_UPLOAD_URL, files=files, headers=headers)
+
+    if response.status_code != 200:
+        raise Exception(f"Storacha upload failed: {response.status_code} {response.text}")
+
+    data = response.json()
+    return data.get("cid")  # or "IpfsHash" depending on Storacha's response structure
 
 def pin_json_to_ipfs(json_data):
     url = "https://api.storacha.com/v1/pins/json"
