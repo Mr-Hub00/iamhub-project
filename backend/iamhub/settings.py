@@ -62,7 +62,7 @@ ROOT_URLCONF = 'iamhub.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Add this line to use a global templates folder
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
