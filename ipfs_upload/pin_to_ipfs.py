@@ -1,6 +1,7 @@
 import os
 import requests
 from dotenv import load_dotenv
+from ipfs_upload.pin_to_ipfs import pin_file_to_ipfs
 
 load_dotenv()
 
