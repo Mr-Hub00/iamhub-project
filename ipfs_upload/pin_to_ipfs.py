@@ -1,7 +1,6 @@
 import os
 import requests
 from dotenv import load_dotenv
-from ipfs_upload.pin_to_ipfs import pin_file_to_ipfs
 
 load_dotenv()
 
@@ -26,22 +25,3 @@ def pin_file_to_ipfs(filepath):
 
     data = response.json()
     return data.get("cid") or data.get("IpfsHash")  # Adjust if needed per Storacha's spec
-
-def pin_json_to_ipfs(json_data):
-    url = "https://api.storacha.com/v1/pins/json"
-    headers = {
-        "Authorization": f"Bearer {STORACHA_API_KEY}",
-        "Content-Type": "application/json"
-    }
-
-    response = requests.post(url, json=json_data, headers=headers)
-    if response.status_code != 200:
-        raise Exception(f"Storacha JSON pin failed: {response.status_code} {response.text}")
-    
-    return response.json().get("cid")
-
-# Example usage
-if __name__ == "__main__":
-    sample_path = "backend/apps/nft_upload/test_upload/sample.jpg"  # Change this to your test file
-    cid = pin_file_to_ipfs(sample_path)
-    print(f"✅ Uploaded to IPFS. CID: {cid}")
