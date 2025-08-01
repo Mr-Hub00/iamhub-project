@@ -1,13 +1,15 @@
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
 from django.urls import path, include
-from . import views
+from apps.nft_upload.views import upload_nft_view, upload_success
 
 urlpatterns = [
-    path('grappelli/', include('grappelli.urls')),
-    path('upload/', views.upload_nft, name='nft_upload'),
-    path('success/', views.upload_success, name='nft_upload_success'),
+    path('admin/', admin.site.urls),
+    path('upload/', upload_nft_view, name='upload_nft'),
+    path('success/', upload_success, name='upload_success'),
     path('accounts/', include('allauth.urls')),
+    path('grappelli/', include('grappelli.urls')),
 ]
 
 if settings.DEBUG:
