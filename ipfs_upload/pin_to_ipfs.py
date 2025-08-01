@@ -43,4 +43,4 @@ def pin_json_to_ipfs(json_data):
 if __name__ == "__main__":
     sample_path = "backend/apps/nft_upload/test_upload/sample.jpg"  # Change this to your test file
     cid = pin_file_to_ipfs(sample_path)
-    print(f"✅ Uploaded to IPFS.
+    print(f"✅ Uploaded to IPFS. CID: {cid}")
