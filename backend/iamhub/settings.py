@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.nft_upload',
     'apps.users',
-]
-
-INSTALLED_APPS += [
+    'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -132,9 +133,30 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'users.CustomUser'  # Change back to this format
+AUTH_USER_MODEL = 'users.CustomUser'
+
+# Use JWTs for auth
+REST_USE_JWT = True
+
+# Add Django Rest Framework config
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    ),
+}
+
+# Configure JWT (optional — for refresh tokens in cookies)
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('JWT',),
+}
 
 SITE_ID = 1
+
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
