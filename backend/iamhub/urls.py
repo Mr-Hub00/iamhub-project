@@ -10,10 +10,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', upload_nft_view, name='upload_nft'),
     path('success/', upload_success, name='upload_success'),
-    path('auth/', include('dj_rest_auth.urls')),
-    path('auth/registration/', include('dj_rest_auth.registration.urls')),
-    path('accounts/', include('allauth.urls')),
-    path('grappelli/', include('grappelli.urls')),
+    
+    # Clean JWT Authentication endpoints
+    path('api/auth/', include('apps.users.urls')),
 ]
 
 if settings.DEBUG:

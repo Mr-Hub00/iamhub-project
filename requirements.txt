@@ -1,7 +1,11 @@
 Django==4.2
 djangorestframework==3.14.0
-web3==5.30.0
-ipfshttpclient==0.8.0
-Pillow==9.5.0
-django-cors-headers==3.14.0
+dj-rest-auth==4.0.1
+djangorestframework-simplejwt==5.2.2
+django-allauth==0.54.0
+web3==6.15.1
+ipfshttpclient==0.8.0a2
+Pillow==10.4.0
+django-cors-headers==4.6.0
+django-cors-headers==4.3.1
 python-dotenv==1.0.0
