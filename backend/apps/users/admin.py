@@ -7,4 +7,5 @@ class CustomUserAdmin(UserAdmin):
     model = CustomUser
     list_display = ('username', 'email', 'wallet_address', 'role', 'is_staff', 'is_active')
     fieldsets = UserAdmin.fieldsets + (
-        ('Blockchain Info', {'fields': ('wallet_address',
+        ('Blockchain Info', {'fields': ('wallet_address',)}),
+    )
