@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.nft_upload',
-    'apps.users',  # Change from 'users' to 'apps.users'
+    'apps.users',
 ]
 
 INSTALLED_APPS += [
@@ -132,7 +132,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'apps.users.CustomUser'  # Change from 'users.CustomUser'
+AUTH_USER_MODEL = 'users.CustomUser'  # Change back to this format
 
 SITE_ID = 1
 
