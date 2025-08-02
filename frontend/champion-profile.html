@@ -433,8 +433,8 @@
         </div>
         <div class="nav-actions">
             <span id="navUsername">Loading...</span>
-            <a href="dashboard.html" class="btn">Dashboard</a>
-            <a href="login.html" class="btn btn-secondary" onclick="logout()">Logout</a>
+            <a href="/" class="btn">Home</a>
+            <a href="#" class="btn btn-secondary" onclick="logout()">Logout</a>
         </div>
     </nav>
 
@@ -625,7 +625,7 @@
         async function checkAuthentication() {
             const token = localStorage.getItem('access_token');
             if (!token) {
-                window.location.href = 'login.html';
+                window.location.href = '/';
                 return;
             }
 
@@ -642,11 +642,11 @@
                     populateProfile();
                 } else {
                     localStorage.removeItem('access_token');
-                    window.location.href = 'login.html';
+                    window.location.href = '/';
                 }
             } catch (error) {
                 console.error('Authentication check failed:', error);
-                window.location.href = 'login.html';
+                window.location.href = '/';
             }
         }
 
@@ -1157,7 +1157,7 @@
             localStorage.removeItem('access_token');
             localStorage.removeItem('refresh_token');
             localStorage.removeItem('user');
-            window.location.href = 'login.html';
+            window.location.href = '/';
         }
 
         // Close modals when clicking outside

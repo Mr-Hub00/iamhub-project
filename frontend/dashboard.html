@@ -215,7 +215,7 @@
         </div>
         <div class="user-info">
             <span id="navUsername">Loading...</span>
-            <a href="login.html" class="btn logout" onclick="logout()">Logout</a>
+            <a href="/" class="btn logout" onclick="logout()">Logout</a>
         </div>
     </nav>
 
@@ -239,8 +239,8 @@
                     <h3>🔐 Identity Management</h3>
                     <p>Manage your digital identity with blockchain-backed credentials.</p>
                     <div class="action-buttons">
-                        <a href="#" class="action-btn">View Profile</a>
-                        <a href="#" class="action-btn">Update Info</a>
+                        <a href="/champion-profile/" class="action-btn">ChampionP Profile</a>
+                        <a href="/champion-profile/" class="action-btn">Edit Identity</a>
                     </div>
                 </div>
 
@@ -248,7 +248,7 @@
                     <h3>🎨 NFT Collection</h3>
                     <p>Upload, manage, and showcase your NFT assets on IPFS.</p>
                     <div class="action-buttons">
-                        <a href="upload.html" class="action-btn">Upload NFT</a>
+                        <a href="/upload/" class="action-btn">Upload NFT</a>
                         <a href="#" class="action-btn">View Gallery</a>
                     </div>
                 </div>
@@ -301,13 +301,13 @@
                 <h3>Authentication Required</h3>
                 <p>Please log in to access your dashboard.</p>
                 <div class="action-buttons">
-                    <a href="login.html" class="action-btn">Login</a>
-                    <a href="register.html" class="action-btn">Register</a>
+                    <a href="/login/" class="action-btn">Login</a>
+                    <a href="/register/" class="action-btn">Register</a>
                 </div>
             </div>
                 <div class="action-buttons">
-                    <a href="login.html" class="action-btn">Login</a>
-                    <a href="register.html" class="action-btn">Register</a>
+                    <a href="/login/" class="action-btn">Login</a>
+                    <a href="/register/" class="action-btn">Register</a>
                 </div>
             </div>
         </div>
@@ -445,7 +445,7 @@
             localStorage.removeItem('access_token');
             localStorage.removeItem('refresh_token');
             localStorage.removeItem('user');
-            window.location.href = 'login.html';
+            window.location.href = '/';
         }
     </script>
 </body>
