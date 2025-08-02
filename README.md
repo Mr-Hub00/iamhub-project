@@ -106,3 +106,6 @@ python manage.py runserver
 Use pwd to check your current folder.
 Use cd foldername to move into a folder.
 Use cd .. to move up one level.
+
+python manage.py makemigrations
+python manage.py migrate
